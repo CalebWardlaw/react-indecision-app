@@ -5,36 +5,41 @@ class Indecision extends React.Component {
     render() {
 
 
-        //Class variables
-        // let template = (
-        //     <div className="hello">
-        //         <h1>Hello World!</h1>
-        //         <ol>
-        //             <li>Item one</li>
-        //             <li>Item two</li>
-        //         </ol>
-        //     </div>
-        // )
+//Class variables
+// let template = (
+//     <div className="hello">
+//         <h1>Hello World!</h1>
+//         <ol>
+//             <li>Item one</li>
+//             <li>Item two</li>
+//         </ol>
+//     </div>
+// )
         let user = {
             name: 'Caleb',
             age: 29,
             location: 'San Antonio'
         }
 
+        function getLocation(location) {
+            if (location) {
+                return <p>Location: {location}</p>;
+            }
+        }
+
         let app = {
             title: 'Indecision App',
             subtitle: 'Choosing a Path'
-
-
-    }
+        }
         let templateTwo = (
             <div className="challenge">
-                {/*Braces for vars*/}
-                <h1>{user.name}</h1>
+                {/*Braces for vars, Ternary operator*/}
+
+                <h1>{user.name ? user.name : 'Anonymous'}</h1>
                 <h2>{app.title}</h2>
                 <h3>{app.subtitle}</h3>
                 <p>Age: {user.age}</p>
-                <p>Location: {user.location}</p>
+                {getLocation(user.location)}
             </div>
         );
         return (
@@ -45,6 +50,6 @@ class Indecision extends React.Component {
 }
 
 ReactDOM.render(
-    <Indecision />,
+    <Indecision/>,
     document.getElementById('root')
 );
