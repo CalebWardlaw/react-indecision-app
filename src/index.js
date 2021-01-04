@@ -1,8 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+const square = function (x){
+    return x*x;
+}
+
+
+
 class Indecision extends React.Component {
     render() {
+
 
 
 //Class variables
